@@ -3,6 +3,7 @@
 
 <!-- Imports Dependencies -->
 <link rel="import" href="../shared/game-field/game-field.html">
+<link rel="import" href="../shared/rough-filled-polygon-icon/rough-filled-polygon-icon.html">
 
 <!-- Defines element markup -->
 <dom-module id="sandbox-mode-page">
@@ -35,8 +36,16 @@
     <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" columns="30" rows="20" editable></game-field>
 
     <div class="controls">
-      <paper-button id="play-button" raised>Play</paper-button>
+      <span id="play-button">
+        <template is="dom-if" if="[[not(running)]]">
+          <rough-filled-polygon-icon roughness="[[roughness]]" fill="#8bc34a" hover-color="#aed581" polygons='[ [ [ 3, 3 ], [ 3, 27 ], [ 27, 15 ] ] ]'></rough-filled-polygon-icon>
+        </template>
+        <template is="dom-if" if="[[running]]">
+          <rough-filled-polygon-icon roughness="[[roughness]]" fill="#ff5722" hover-color="#ff8a65" polygons='[ [ [ 3, 3 ], [ 3, 27 ], [ 8, 27 ], [ 8, 3 ] ], [ [ 22, 27 ], [ 22, 3 ], [ 27, 3 ], [ 27, 27 ] ] ]'></rough-filled-polygon-icon>
+        </template>
+      </span>
     </div>
+    
   </template>
 
   <!-- Loads JavaScript -->

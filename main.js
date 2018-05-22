@@ -71,7 +71,7 @@ function createWindow()
       submenu: [
         {
           label: 'Learn More',
-          click () { require('electron').shell.openExternal('https://github.com/FlorianFe') }
+          click () { require('electron').shell.openExternal('https://github.com/Cells') }
         }
       ]
     }

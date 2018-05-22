@@ -27,8 +27,12 @@ class SandboxModePage extends Polymer.Element
     this.shadowRoot.querySelector('#play-button').addEventListener('click', () =>
     {
       this.running = !this.running;
-      this.shadowRoot.querySelector('#play-button').innerText = (this.running) ? "pause" : "play";
     });
+  }
+
+  not(value)
+  {
+    return !value;
   }
 
   tick()

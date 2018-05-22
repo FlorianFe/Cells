@@ -2,11 +2,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <!-- Imports Dependencies -->
-<link rel="import" href="rough-close-icon/rough-close-icon.html">
-<link rel="import" href="rough-minimize-icon/rough-minimize-icon.html">
-<link rel="import" href="rough-maximize-icon/rough-maximize-icon.html">
-<link rel="import" href="rough-menu-icon/rough-menu-icon.html">
-
 <link rel="import" href="../shared/rough-line-icon/rough-line-icon.html">
 
 <!-- Defines element markup -->
@@ -23,6 +18,7 @@
 
       .fixed
       {
+        display: block;
         position: fixed;
         top: 0;
         width: calc(100% - 10px);
@@ -39,6 +35,7 @@
 
       .non-fixed
       {
+        display: block;
         width: calc(100% - 10px);
         height: 30px;
         margin: 0;
