@@ -15,7 +15,7 @@ In order to use this source code you need to have Node.js, Git and Bower install
 
 ```bash
 # Clone this repository
-git clone https://github.com/florianfe/Elements
+git clone https://github.com/florianfe/Cells
 # Go into the repository
 cd Elements
 # Install npm dependencies
