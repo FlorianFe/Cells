@@ -31,7 +31,9 @@ npm run-script dist
 
 ## 🖼 Previev
 
-Coming soon...
+<img alt="Screenshot 1" src="https://github.com/FlorianFe/Cells/blob/master/doc/assets/screenshot-1.png?raw=true">
+<img alt="Screenshot 2" src="https://github.com/FlorianFe/Cells/blob/master/doc/assets/screenshot-2.png?raw=true">
+<img alt="Screenshot 3" src="https://github.com/FlorianFe/Cells/blob/master/doc/assets/screenshot-3.png?raw=true">
 
 
 ## 💾 Download
