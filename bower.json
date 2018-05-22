@@ -1,0 +1,36 @@
+{
+  "name": "Cells",
+  "description": "Conway's Game of Life implementation",
+  "main": "main.js",
+  "authors": [
+    "Florian Fechner"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "game",
+    "of",
+    "life",
+    "code",
+    "competition",
+    "polymer",
+    "electron"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Polymer": "Polymer/Polymer#^2.6.0",
+    "iron-pages": "PolymerElements/iron-pages#^2.1.1",
+    "paper-dialog": "PolymerElements/paper-dialog#^2.1.1",
+    "paper-input": "PolymerElements/paper-input#^2.2.2",
+    "paper-slider": "PolymerElements/paper-slider#^2.0.6",
+    "paper-card": "PolymerElements/paper-card#^2.1.0",
+    "paper-button": "PolymerElements/paper-button#^2.1.1"
+  }
+}

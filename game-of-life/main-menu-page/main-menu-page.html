@@ -1,0 +1,49 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="../shared/game-field/game-field.html">
+
+<!-- Defines element markup -->
+<dom-module id="main-menu-page">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      game-field
+      {
+        margin: auto;
+      }
+
+      paper-button
+      {
+        width: 250px;
+      }
+
+      </style>
+    </custom-style>
+
+    <br><br>
+
+    <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 1, 1, 1, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0]' columns="5" rows="5"></game-field>
+
+    <br>
+
+    <paper-button id="button-sandbox-mode" raised>Sandbox Mode</paper-button><br><br>
+    <paper-button id="button-tutorial" raised>Tutorial</paper-button><br><br>
+    <paper-button id="button-settings" raised>Settings</paper-button><br><br>
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="main-menu-page.js"></script>
+</dom-module>

@@ -1,0 +1,47 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-slider/paper-slider.html">
+
+<!-- Imports Dependencies -->
+
+<!-- Defines element markup -->
+<dom-module id="color-sliders">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+      }
+
+      paper-slider.red
+      {
+        --paper-slider-knob-color: var(--paper-red-500);
+        --paper-slider-active-color: var(--paper-red-500);
+      }
+
+      paper-slider.green
+      {
+        --paper-slider-knob-color: var(--paper-green-500);
+        --paper-slider-active-color: var(--paper-green-500);
+      }
+
+      paper-slider.blue {
+        --paper-slider-knob-color: var(--paper-light-blue-500);
+        --paper-slider-active-color: var(--paper-light-blue-500);
+      }
+
+      </style>
+    </custom-style>
+
+    <paper-slider class="red" value="{{r}}" pin min="0" max="255" step="1"></paper-slider>
+    <paper-slider class="green" value="{{g}}" pin min="0" max="255" step="1"></paper-slider>
+    <paper-slider class="blue" value="{{b}}" pin min="0" max="255" step="1"></paper-slider>
+
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="color-sliders.js"></script>
+</dom-module>

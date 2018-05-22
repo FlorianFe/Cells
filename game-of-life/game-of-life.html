@@ -1,0 +1,45 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+
+<link rel="import" href="rough-window-frame/rough-window-frame.html">
+<link rel="import" href="main-menu-page/main-menu-page.html">
+<link rel="import" href="sandbox-mode-page/sandbox-mode-page.html">
+<link rel="import" href="configuration-page/configuration-page.html">
+
+<!-- Defines element markup -->
+<dom-module id="game-of-life">
+
+  <template>
+
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      </style>
+    </custom-style>
+
+
+    <rough-window-frame roughness="[[roughness]]"></rough-window-frame>
+
+    <iron-pages selected="[[selectedPage]]">
+      <main-menu-page roughness="[[roughness]]" cell-color="[[cellColor]]"></main-menu-page>
+      <sandbox-mode-page roughness="[[roughness]]" cell-color="[[cellColor]]"></sandbox-mode-page>
+      <configuration-page roughness="{{roughness}}" cell-color="{{cellColor}}"></configuration-page>
+      <level-selection-page></level-selection-page>
+    </iron-pages>
+
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="game-of-life.js"></script>
+</dom-module>

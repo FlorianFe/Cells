@@ -1,0 +1,80 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="../shared/game-field/game-field.html">
+<link rel="import" href="rough-binary-vector-editor/rough-binary-vector-editor.html">
+<link rel="import" href="color-sliders/color-sliders.html">
+
+
+<!-- Defines element markup -->
+<dom-module id="configuration-page">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+        width: calc(100% - 30px);
+        padding: 15px;
+      }
+
+      paper-slider
+      {
+        --paper-slider-knob-color: var(--paper-grey-800);
+        --paper-slider-active-color: var(--paper-grey-800);
+      }
+
+      .container
+      {
+        display: flex;
+        width: 100%;
+      }
+
+      .item
+      {
+        flex: 1;
+        text-align: center;
+      }
+
+      game-field
+      {
+        margin: auto;
+      }
+
+      </style>
+    </custom-style>
+
+    <br><br>
+
+    <div class="container">
+      <div class="item">
+        <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 1, 1, 1, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0]' columns="5" rows="5"></game-field>
+      </div>
+      <div class="item">
+        <br>
+        <paper-card>
+          <color-sliders color="{{cellColor}}"></color-sliders>
+          <hr>
+          <paper-slider value="{{roughness}}" pin min="0" max="2" step="0.1"></paper-slider>
+        </paper-card>
+      </div>
+    </div>
+<!--
+    <br><br>
+
+    <rough-binary-vector-editor cell-color="#00ff00" vector="[[bornRules]]"></rough-binary-vector-editor>
+    <rough-binary-vector-editor cell-color="#ff0000" vector="[[dieRules]]"></rough-binary-vector-editor>
+-->
+
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="configuration-page.js"></script>
+</dom-module>

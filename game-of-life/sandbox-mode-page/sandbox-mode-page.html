@@ -1,0 +1,44 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../shared/game-field/game-field.html">
+
+<!-- Defines element markup -->
+<dom-module id="sandbox-mode-page">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+        width: calc(100% - 30px);
+        padding: 15px;
+      }
+
+      game-field
+      {
+        width: 100%;
+      }
+
+      .controls
+      {
+        text-align: center;
+        padding: 15px;
+      }
+
+      </style>
+    </custom-style>
+
+    <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" columns="30" rows="20" editable></game-field>
+
+    <div class="controls">
+      <paper-button id="play-button" raised>Play</paper-button>
+    </div>
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="sandbox-mode-page.js"></script>
+</dom-module>
