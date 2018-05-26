@@ -7,7 +7,6 @@
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 
 <link rel="import" href="../shared/game-field/game-field.html">
-<link rel="import" href="rough-binary-vector-editor/rough-binary-vector-editor.html">
 <link rel="import" href="color-sliders/color-sliders.html">
 
 
@@ -34,6 +33,7 @@
       .container
       {
         display: flex;
+        align-items: center;
         width: 100%;
       }
 
@@ -48,30 +48,53 @@
         margin: auto;
       }
 
+      .slider-display-game-field
+      {
+        width: 50px;
+      }
+
       </style>
     </custom-style>
 
     <br><br>
 
-    <div class="container">
-      <div class="item">
-        <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 1, 1, 1, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0]' columns="5" rows="5"></game-field>
-      </div>
-      <div class="item">
-        <br>
-        <paper-card>
-          <color-sliders color="{{cellColor}}"></color-sliders>
-          <hr>
-          <paper-slider value="{{roughness}}" pin min="0" max="2" step="0.1"></paper-slider>
-        </paper-card>
-      </div>
+    <div class="item">
+      <game-field id="example-game-field" cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 1, 1, 1, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0]' columns="5" rows="5"></game-field>
     </div>
-<!--
+
+    <br>
+
+    <div class="item">
+      <br>
+      <paper-card>
+        <color-sliders color="{{cellColor}}" roughness="[[roughness]]"></color-sliders>
+        <hr>
+        <div class="container">
+          <div class="item">
+            <game-field class="slider-display-game-field" cell-color="[[cellColor]]" roughness="0" cell-states-data='[1]' columns="1" rows="1"></game-field>
+          </div>
+          <div class="item">
+            <paper-slider value="{{roughness}}" pin min="0" max="2" step="0.1"></paper-slider>
+          </div>
+          <div class="item">
+            <game-field class="slider-display-game-field" cell-color="[[cellColor]]" roughness="2" cell-states-data='[1]' columns="1" rows="1"></game-field>
+          </div>
+        </div>
+      </paper-card>
+    </div>
+
+    <br><br>
+
+    <!-- <rule-editor roughness="[[roughness]]"></rule-editor> -->
+
+    <!--
+
     <br><br>
 
     <rough-binary-vector-editor cell-color="#00ff00" vector="[[bornRules]]"></rough-binary-vector-editor>
     <rough-binary-vector-editor cell-color="#ff0000" vector="[[dieRules]]"></rough-binary-vector-editor>
--->
+    
+    -->
 
   </template>
 

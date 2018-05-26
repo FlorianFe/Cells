@@ -4,8 +4,6 @@
 
   const draw = (svg, polygons, config) =>
   {
-    console.log(polygons);
-
     svg.innerHTML = '';
 
     const rc = rough.svg(svg);

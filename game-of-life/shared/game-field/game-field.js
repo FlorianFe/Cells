@@ -49,9 +49,7 @@
       if(this.cellStatesData)
       {
         // create 2d - array with array data
-        this.cellStates = ndarray(new Int8Array(this.cellStatesData), [this.columns, this.rows]);
-
-        console.log(this.cellStates);
+        this.cellStates = ndarray(new Int8Array(this.cellStatesData), [this.rows, this.columns]).transpose(1, 0);
       }
       else
       {
@@ -128,10 +126,8 @@
 
         const rc = rough.svg(svg);
 
-        const strokeWidth = 1;
-
-        const livingConfig = { strokeWidth: strokeWidth, roughness: this.roughness, fill: this.cellColor, fillWeight: 1.5 };
-        const deadConfig = { strokeWidth: strokeWidth, roughness: this.roughness };
+        const livingConfig = { roughness: this.roughness, fill: this.cellColor, fillWeight: 1.5 };
+        const deadConfig = { roughness: this.roughness };
 
         for(let x=0; x<sx; x++)
         for(let y=0; y<sy; y++)

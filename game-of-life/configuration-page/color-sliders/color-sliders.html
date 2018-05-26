@@ -3,6 +3,7 @@
 <link rel="import" href="../../../bower_components/paper-slider/paper-slider.html">
 
 <!-- Imports Dependencies -->
+<link rel="import" href="../../shared/game-field/game-field.html">
 
 <!-- Defines element markup -->
 <dom-module id="color-sliders">
@@ -28,17 +29,69 @@
         --paper-slider-active-color: var(--paper-green-500);
       }
 
-      paper-slider.blue {
+      paper-slider.blue
+      {
         --paper-slider-knob-color: var(--paper-light-blue-500);
         --paper-slider-active-color: var(--paper-light-blue-500);
+      }
+
+      .container
+      {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+
+      .item
+      {
+        flex: 1;
+        text-align: center;
+      }
+
+      .slider-display-game-field
+      {
+        width: 50px;
       }
 
       </style>
     </custom-style>
 
-    <paper-slider class="red" value="{{r}}" pin min="0" max="255" step="1"></paper-slider>
-    <paper-slider class="green" value="{{g}}" pin min="0" max="255" step="1"></paper-slider>
-    <paper-slider class="blue" value="{{b}}" pin min="0" max="255" step="1"></paper-slider>
+
+    <div class="container">
+      <div class="item">
+        <game-field class="slider-display-game-field" cell-color="[[rgbToHex(0, 0, 0)]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
+      </div>
+      <div class="item">
+        <paper-slider class="red" value="{{r}}" pin min="0" max="255" step="1"></paper-slider>
+      </div>
+      <div class="item">
+        <game-field class="slider-display-game-field" cell-color="[[rgbToHex(255, 0, 0)]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="item">
+        <game-field class="slider-display-game-field" cell-color="[[rgbToHex(0, 0, 0)]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
+      </div>
+      <div class="item">
+        <paper-slider class="green" value="{{g}}" pin min="0" max="255" step="1"></paper-slider>
+      </div>
+      <div class="item">
+        <game-field class="slider-display-game-field" cell-color="[[rgbToHex(0, 255, 0)]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="item">
+        <game-field class="slider-display-game-field" cell-color="[[rgbToHex(0, 0, 0)]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
+      </div>
+      <div class="item">
+        <paper-slider class="blue" value="{{b}}" pin min="0" max="255" step="1"></paper-slider>
+      </div>
+      <div class="item">
+        <game-field class="slider-display-game-field" cell-color="[[rgbToHex(0, 0, 255)]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
+      </div>
+    </div>
 
   </template>
 

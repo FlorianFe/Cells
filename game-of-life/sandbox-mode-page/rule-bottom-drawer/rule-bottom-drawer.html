@@ -1,0 +1,68 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../../shared/rough-filled-polygon-icon/rough-filled-polygon-icon.html">
+<link rel="import" href="../../shared/rule-editor/rule-editor.html">
+
+
+<!-- Defines element markup -->
+<dom-module id="rule-bottom-drawer">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        background-color: #ffffff;
+        border-top: 1px ridge grey;
+      }
+
+      .controls
+      {
+        text-align: center;
+        padding: 15px;
+      }
+
+      .container
+      {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+
+      .item
+      {
+        flex: 1;
+        text-align: center;
+      }
+
+      </style>
+    </custom-style>
+
+    <div class="item">
+      <span id="open-close-icon">
+        <template is="dom-if" if="[[opened]]">
+          <rough-filled-polygon-icon roughness="[[roughness]]" fill="#000000" hover-color="#aaaaaa" polygons='[ [ [ 15, 25 ], [ 5, 15 ], [ 25, 15 ] ] ]'></rough-filled-polygon-icon>
+        </template>
+        <template is="dom-if" if="[[not(opened)]]">
+          <rough-filled-polygon-icon roughness="[[roughness]]" fill="#000000" hover-color="#aaaaaa" polygons='[ [ [ 15, 15 ], [ 5, 25 ], [ 25, 25 ] ] ]'></rough-filled-polygon-icon>
+        </template>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="item">
+      <rule-editor roughness="[[roughness]]" born-rules="{{bornRules}}" die-rules="{{dieRules}}" editable></rule-editor>
+    </div>
+
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="rule-bottom-drawer.js"></script>
+</dom-module>

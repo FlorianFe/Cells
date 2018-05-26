@@ -23,6 +23,7 @@
       game-field
       {
         margin: auto;
+        width: 200px;
       }
 
       paper-button
@@ -35,9 +36,9 @@
 
     <br><br>
 
-    <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 1, 1, 1, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0]' columns="5" rows="5"></game-field>
+    <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[[getClockData()]]' columns="6" rows="6"></game-field>
 
-    <br>
+    <br><br>
 
     <paper-button id="button-sandbox-mode" raised>Sandbox Mode</paper-button><br><br>
     <paper-button id="button-tutorial" raised>Tutorial</paper-button><br><br>

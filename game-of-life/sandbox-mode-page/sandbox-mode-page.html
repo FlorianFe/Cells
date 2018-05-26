@@ -2,8 +2,12 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <!-- Imports Dependencies -->
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
 <link rel="import" href="../shared/game-field/game-field.html">
 <link rel="import" href="../shared/rough-filled-polygon-icon/rough-filled-polygon-icon.html">
+
+<link rel="import" href="rule-bottom-drawer/rule-bottom-drawer.html">
 
 <!-- Defines element markup -->
 <dom-module id="sandbox-mode-page">
@@ -15,13 +19,18 @@
       :host
       {
         display: block;
-        width: calc(100% - 30px);
-        padding: 15px;
+        width: 100%;
       }
 
       game-field
       {
         width: 100%;
+      }
+
+      .content
+      {
+        width: calc(100% - 30px);
+        padding: 15px;
       }
 
       .controls
@@ -30,22 +39,48 @@
         padding: 15px;
       }
 
+      #bottom-drawer
+      {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        background-color: #ffffff;
+        border-top: 1px ridge grey;
+      }
+
+      .container
+      {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+
+      .item
+      {
+        flex: 1;
+        text-align: center;
+      }
+
       </style>
     </custom-style>
 
-    <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" columns="30" rows="20" editable></game-field>
+    <div class="content">
+      <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" born-rules="[[bornRules]]" die-rules="[[dieRules]]" columns="30" rows="20" editable></game-field>
 
-    <div class="controls">
-      <span id="play-button">
-        <template is="dom-if" if="[[not(running)]]">
-          <rough-filled-polygon-icon roughness="[[roughness]]" fill="#8bc34a" hover-color="#aed581" polygons='[ [ [ 3, 3 ], [ 3, 27 ], [ 27, 15 ] ] ]'></rough-filled-polygon-icon>
-        </template>
-        <template is="dom-if" if="[[running]]">
-          <rough-filled-polygon-icon roughness="[[roughness]]" fill="#ff5722" hover-color="#ff8a65" polygons='[ [ [ 3, 3 ], [ 3, 27 ], [ 8, 27 ], [ 8, 3 ] ], [ [ 22, 27 ], [ 22, 3 ], [ 27, 3 ], [ 27, 27 ] ] ]'></rough-filled-polygon-icon>
-        </template>
-      </span>
+      <div class="controls">
+        <span id="play-button">
+          <template is="dom-if" if="[[not(running)]]">
+            <rough-filled-polygon-icon roughness="[[roughness]]" fill="#8bc34a" hover-color="#aed581" polygons='[ [ [ 3, 3 ], [ 3, 27 ], [ 27, 15 ] ] ]'></rough-filled-polygon-icon>
+          </template>
+          <template is="dom-if" if="[[running]]">
+            <rough-filled-polygon-icon roughness="[[roughness]]" fill="#ff5722" hover-color="#ff8a65" polygons='[ [ [ 3, 3 ], [ 3, 27 ], [ 8, 27 ], [ 8, 3 ] ], [ [ 22, 27 ], [ 22, 3 ], [ 27, 3 ], [ 27, 27 ] ] ]'></rough-filled-polygon-icon>
+          </template>
+        </span>
+      </div>
     </div>
-    
+
+    <rule-bottom-drawer born-rules="{{bornRules}}" die-rules="{{dieRules}}" roughness="[[roughness]]"></rule-bottom-drawer>
+
   </template>
 
   <!-- Loads JavaScript -->

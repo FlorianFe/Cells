@@ -1,0 +1,44 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+<link rel="import" href="../../../bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="../../shared/rough-filled-polygon-icon/rough-filled-polygon-icon.html">
+
+<!-- Defines element markup -->
+<dom-module id="rule-editor">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+      }
+
+      .container
+      {
+        display: flex;
+        width: 600px;
+      }
+
+      .item
+      {
+        flex: 1;
+        text-align: center;
+      }
+
+      </style>
+    </custom-style>
+
+    <div class="item">
+      <svg height="125px" viewBox="0 0 700 200"></svg>
+    </div>
+
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="rule-editor.js"></script>
+</dom-module>

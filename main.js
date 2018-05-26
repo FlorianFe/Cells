@@ -16,8 +16,8 @@ function createWindow()
 {
   browserWindow = new BrowserWindow(
   {
-    width: 600,
-    height: 600,
+    width: 650,
+    height: 650,
     backgroundColor: '#fff',
     frame: false
   });
@@ -71,7 +71,7 @@ function createWindow()
       submenu: [
         {
           label: 'Learn More',
-          click () { require('electron').shell.openExternal('https://github.com/Cells') }
+          click () { require('electron').shell.openExternal('https://github.com/FlorianFe/Cells') }
         }
       ]
     }
