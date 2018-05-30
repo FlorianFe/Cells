@@ -24,7 +24,7 @@
 
     tick()
     {
-      console.log("tick");
+      // method does nothing
     }
   }
 

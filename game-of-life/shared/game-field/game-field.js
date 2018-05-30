@@ -73,8 +73,11 @@
           const cellWidth = svgWidth / (sx + 1);
           const cellHeight = svgHeight / (sy + 1);
 
-          const cellX = parseInt((localX / cellWidth) - 0.5);
-          const cellY = parseInt((localY / cellHeight) - 0.5);
+          const centerX = (localX / cellWidth) - 0.5;
+          const centerY = (localY / cellHeight) - 0.5;
+
+          const cellX = (centerX > 0) ? parseInt(centerX) : -1;
+          const cellY = (centerY > 0) ? parseInt(centerY) : -1;
 
           if(this.isCoordinateInsideGameField(cellX, cellY, sx, sy))
           {
@@ -93,11 +96,14 @@
       if(this.cellStatesData)
       {
         // create 2d - array with array data
-        this.cellStates = ndarray(new Int8Array(this.cellStatesData), [this.rows, this.columns]).transpose(1, 0);
+        const raw = ndarray(new Int8Array(this.cellStatesData), [this.rows, this.columns]);
+
+        this.cellStates = raw.transpose(1, 0);
       }
       else
       {
-        this.cellStates = zeros([this.columns, this.rows]); // create 2d - array filled with zeros
+        // create 2d - array filled with zeros
+        this.cellStates = zeros([this.columns, this.rows]);
       }
 
       this.render();
