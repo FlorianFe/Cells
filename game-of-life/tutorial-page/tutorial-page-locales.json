@@ -1,0 +1,60 @@
+{
+   "en":
+   {
+     "main menu": "Main Menu",
+     "sandbox mode": "Sandbox Mode",
+     "tutorial": "Tutorial",
+     "settings": "Settings",
+
+     "welcome to the game of life": "Welcome to the Game of Life",
+     "the neighbourhood": "The Neighbourhood",
+     "lets go": "Let's go!",
+
+     "chapter_1_1": "Conway's Game of Life is a game developed by mathematician John Horton Conway based on a two-dimensional cellular automaton.",
+     "chapter_1_2": "The playing field is a two-dimensional field full of cells. Each cell can occupy exactly one of two  states, ",
+     "chapter_1_3": "In this application, living cells are displayed by the respective cell box is painted.",
+
+     "dead": "dead",
+     "or": "or",
+     "living": "alive",
+
+     "chapter_2_1": "In the question of whether a cell will be alive or dead in the next iteration, the neighborhood of the cell plays an important role. In this case, the 8-er neighborhood, also called Moore neighborhood, is considered. So a cell always has 8 neighbors, of which 0 to 8 can be alive.",
+     "chapter_2_2": "If a living cell has less than 2 living neighbors, it dies of loneliness following the standard Conway rules in the next iteration. If it has more than 3, she dies of overpopulation. If a dead cell has exactly three neighbors, it will be brought to life.",
+
+     "iteration": "Iteration",
+
+     "chapter_3_1": "Under the menu item",
+     "chapter_3_2": "the color of the living cells can be changed. Here, too, the roughness of the drawings can be determined. In the menu item",
+     "chapter_3_3": "you can try out the Cellular Automat. To bring a living cell to death or a dead cell to life, all you have to do is click on each cell. Once you are satisfied with the field, you can start the cellular machine by clicking on the play button.",
+     "chapter_3_4": "If you find the standard Conway rules too boring, you can easily change them. For this, only the control window below the play button must be collapsed and the rule editor appears. The rule editor is ordered by the number of neighbors from left (with 0 neighbors) to right (with 8 neighbors). A green circle means that a cell is animated at the specified neighborhood number. A red circle means that a cell dies at the specified neighborhood number. The rules can be changed by clicking on the circles."
+   },
+   "de":
+   {
+     "main menu": "Hauptmenü",
+     "sandbox mode": "Sandkasten Modus",
+     "tutorial": "Anleitung",
+     "settings": "Einstellungen",
+
+     "the game of life": "Willkommen beim Spiel des Lebens",
+     "the neighbourhood": "Die Nachbarschaft",
+     "lets go": "Auf geht's!",
+
+     "chapter_1_1": "Bei Conway's Game of Life handelt es sich um ein von dem Mathematiker John Horton Conway entwickeltes Spiel, welches auf einem zweidimensionalen zellulären Automaten basiert.",
+     "chapter_1_2": "Das Spielfeld ist ein zweidimensionales Feld voller Zellen. Jede Zelle kann genau einen von zwei Zuständen einnehmen, nämlich",
+     "chapter_1_3": "In dieser Applikation werden lebendige Zellen dargestellt, indem das jeweilige Zellkästchen ausgemalt wird.",
+
+     "dead": "tod",
+     "or": "oder",
+     "living": "lebendig",
+
+     "chapter_2_1": "Bei der Frage, ob eine Zelle in der nächsten Iteration lebendig oder tod sein wird, spielt die Nachbarschaft der Zelle eine wichtige Rolle. Hierbei wird die 8-er Nachbarschaft, auch Moore-Nachbarschaft genannt, betrachtet. Eine Zelle hat also stets 8 Nachbarn, von denen 0 bis 8 lebendig sein können.",
+     "chapter_2_2": "Hat eine lebendige Zelle weniger als 2 lebendige Nachbarn, so stirbt sie nach den Standard-Conway-Regeln in der nächsten Iteration an Einsamkeit. Hat sie mehr als 3, stirbt sie an Überbevölkerung. Hat eine tote Zelle genau drei Nachbarn, so wird sie zum Leben erweckt.",
+
+     "iteration": "Iteration",
+
+     "chapter_3_1": "Unter dem Menüpunkt",
+     "chapter_3_2": "lässt sich die Farbe der lebendigen Zellen ändern. Hierbei lässt sich ebenfalls die Rauheit der Zeichnungen bestimmen. Im Menüpunkt",
+     "chapter_3_3": "lässt sich der Zellulare Automat ausprobieren. Um eine lebendige Zelle tod oder eine tote Zelle lebendig zu machen, muss nur auf die jeweilige Zelle geklickt werden. Sobald man mit dem Feld zufrieden ist, lässt sich der zellulare Automat starten durch das Klicken auf den Play-Button.",
+     "chapter_3_4": "Sollten dir die Standard-Conway-Regeln zu langweilig sein, kannst du diese auch einfach verändern. Hierzu muss nur das Regelfenster unterhalb des Play-Buttons eingeklappt werden und der Regel-Editor erscheint. Der Regeleditor ist geordnet nach der Anzahl der Nachbarn von links (mit 0 Nachbarn) nach rechts (mit 8 Nachbarn). Ein grüner Kreis bedeutet, dass eine Zelle bei der angegebenen Nachbarschaftszahl belebt wird. Ein roter Kreis bedeutet, dass eine Zelle bei der angegebenen Nachbarschaftszahl stirbt. Die Regeln lassen sich durch das Klicken auf die Kreise ändern."
+   }
+ }

@@ -2,10 +2,13 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <!-- Imports Dependencies -->
+<link rel="import" href="../../bower_components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 
-
 <link rel="import" href="../shared/game-field/game-field.html">
+
+<link rel="import" href="language-selection/language-selection.html">
+
 
 <!-- Defines element markup -->
 <dom-module id="main-menu-page">
@@ -44,6 +47,14 @@
         padding: 15px;
       }
 
+      language-selection
+      {
+        margin: 15px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      }
+
       </style>
     </custom-style>
 
@@ -52,15 +63,19 @@
     </div>
 
     <div class="buttons-container">
-      <paper-button id="button-sandbox-mode" raised>Sandbox Mode</paper-button><br><br>
-      <paper-button id="button-tutorial" raised>Tutorial</paper-button><br><br>
-      <paper-button id="button-settings" raised>Settings</paper-button>
+      <paper-button id="button-sandbox-mode" raised>[[localize("sandbox mode")]]</paper-button>
+      <br><br>
+      <paper-button id="button-tutorial" raised>[[localize("tutorial")]]</paper-button>
+      <br><br>
+      <paper-button id="button-settings" raised>[[localize("settings")]]</paper-button>
     </div>
 
     <br><br>
 
-    <img width="40" src="game-of-life/main-menu-page/language-selection/svg/de.svg">
-    <img width="40" src="game-of-life/main-menu-page/language-selection/svg/gb.svg">
+    <!--
+      <language-selection language="{{language}}"></language-selection>
+    -->
+
   </template>
 
   <!-- Loads JavaScript -->

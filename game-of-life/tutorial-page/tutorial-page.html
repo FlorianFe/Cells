@@ -2,6 +2,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <!-- Imports Dependencies -->
+<link rel="import" href="../../bower_components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 
@@ -52,78 +53,56 @@
 
     <!-- <iron-pages selected="0"> -->
       <div class="section">
-        <paper-card heading="Willkommen beim Spiel des Lebens">
-          Bei Conway's Game of Life handelt es sich um ein von dem Mathematiker
-          John Horton Conway entwickeltes Spiel, welches auf einem zweidimensionalen
-          zellulären Automaten basiert.
+        <paper-card heading='[[localize("welcome to the game of life")]]'>
+          [[localize("chapter_1_1")]]
           <br><br>
-          Das Spielfeld ist ein zweidimensionales Feld voller Zellen. Jede Zelle kann
-          genau einen von zwei Zuständen einnehmen, nämlich <b>tod</b> oder <b>lebendig</b>. In dieser
-          Applikation werden lebendige Zellen dargestellt, indem das jeweilige Zellkästchen
-          ausgemalt wird.
-
+          [[localize("chapter_1_2")]]
+          <b>[[localize("dead")]]</b>
+          [[localize("or")]]
+          <b>[[localize("living")]]</b>.
           <div class="container">
             <div class="item">
               <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
-              lebendig
+              [[localize("living")]]
             </div>
             <div class="item">
               <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[0]' columns="1" rows="1"></game-field>
-              tod
+              [[localize("dead")]]
             </div>
           </div>
-
         </paper-card>
       </div>
 
       <div class="section">
-        <paper-card heading="Die Nachbarn">
-          Bei der Frage, ob eine Zelle in der nächsten Iteration lebendig oder tod sein wird,
-          spielt die Nachbarschaft der Zelle eine wichtige Rolle. Hierbei wird die 8-er Nachbarschaft,
-          auch Moore-Nachbarschaft genannt, betrachtet. Eine Zelle hat also stets 8 Nachbarn, von denen
-          0 bis 8 lebendig sein können.
-
+        <paper-card heading='[[localize("the neighbourhood")]]'>
+          [[localize("chapter_2_1")]]
           <br><br>
-
-          Hat eine lebendige Zelle weniger als 2 lebendige Nachbarn, so stirbt sie nach den Standard-Conway-Regeln in
-          der nächsten Iteration an Einsamkeit. Hat sie mehr als 3, stirbt sie an Überbevölkerung. Hat
-          eine tote Zelle genau drei Nachbarn, so wird sie zum Leben erweckt.
-
+          [[localize("chapter_2_2")]]
           <br><br>
-
           <div class="container">
             <div class="item">
               <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" json-file-path="game-of-life/tutorial-page/r-pentomino_1.json"></game-field>
-              Iteration t
+              [[localize("iteration")]] t
             </div>
             <div class="item">
               <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" json-file-path="game-of-life/tutorial-page/r-pentomino_2.json"></game-field>
-              Iteration t + 1
+              [[localize("iteration")]] t + 1
             </div>
           </div>
-
         </paper-card>
       </div>
 
       <div class="section">
-        <paper-card heading="Auf geht's">
-          Unter dem Menüpunkt <b>Settings</b> lässt sich die Farbe der lebendigen Zellen ändern. Hierbei lässt sich ebenfalls
-          die Rauheit der Zeichnungen bestimmen. Im Menüpunkt <b>Sandbox Mode</b> lässt sich der Zellulare Automat ausprobieren.
-          Um eine lebendige Zelle tod oder eine tote Zelle lebendig zu machen, muss nur auf die jeweilige Zelle geklickt werden.
-          Sobald man mit dem Feld zufrieden ist, lässt sich der zellulare Automat starten durch das Klicken auf den Play-Button.
-
+        <paper-card heading='[[localize("lets go")]]'>
+          [[localize("chapter_3_1")]]
+          <b>[[localize("settings")]]</b>
+          [[localize("chapter_3_2")]]
+          <b>[[localize("sandbox mode")]]</b>
+          [[localize("chapter_3_3")]]
           <br><br>
-
-          Sollten dir die Standard-Conway-Regeln zu langweilig sein, kannst du diese auch einfach verändern. Hierzu muss nur das
-          Regelfenster unterhalb des Play-Buttons eingeklappt werden und der Regel-Editor erscheint. Der Regeleditor ist geordnet
-          nach der Anzahl der Nachbarn von links (mit 0 Nachbarn) nach rechts (mit 8 Nachbarn). Ein grüner Kreis bedeutet, dass
-          eine Zelle bei der angegebenen Nachbarschaftszahl belebt wird. Ein roter Kreis bedeutet, dass eine Zelle bei der angegebenen
-          Nachbarschaftszahl stirbt. Die Regeln lassen sich durch das Klicken auf die Kreise ändern.
-
+          [[localize("chapter_3_4")]]
           <br><br>
-
           <rule-editor editable></rule-editor>
-
         </paper-card>
       </div>
     <!-- </iron-pages> -->

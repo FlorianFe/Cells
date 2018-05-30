@@ -1,0 +1,36 @@
+<!-- Imports Polymer -->
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<!-- Imports Dependencies -->
+
+<!-- Defines element markup -->
+<dom-module id="language-selection">
+
+  <template>
+    <custom-style>
+      <style>
+
+      :host
+      {
+        display: block;
+        cursor: pointer;
+      }
+
+      </style>
+    </custom-style>
+
+    <div id="language-button">
+      <template is="dom-if" if='[[isLanguageSelected(language, "en")]]'>
+        <img width="40" src="game-of-life/main-menu-page/language-selection/svg/gb.svg">
+      </template>
+
+      <template is="dom-if" if='[[isLanguageSelected(language, "de")]]'>
+        <img width="40" src="game-of-life/main-menu-page/language-selection/svg/de.svg">
+      </template>
+    </div>
+
+  </template>
+
+  <!-- Loads JavaScript -->
+  <script src="language-selection.js"></script>
+</dom-module>

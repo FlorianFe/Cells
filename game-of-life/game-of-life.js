@@ -1,11 +1,14 @@
 (() =>
 {
+  const CONFIGURATION = require('./game-of-life/config.json');
+
   const MENU_PAGE = 0;
   const SANDBOX_MODE_PAGE = 1;
   const TUTORIAL_PAGE = 2;
   const SETTINGS_PAGE = 3;
 
   const SECOND = 1000; // milliseconds
+
 
   class GameOfLife extends Polymer.Element
   {
@@ -14,17 +17,17 @@
     static get properties()
     {
       return {
-        selectedPage:
-        {
-          type: Number,
-          value: 0
-        }
+        selectedPage: { type: Number, value: 0 },
+        language: { type: String }
       }
     }
 
     connectedCallback()
     {
       super.connectedCallback();
+
+      // just for the www.it-talents.de challange
+      this.language = (CONFIGURATION.language) ? CONFIGURATION.language : 'en';
 
       let ironPages = this.shadowRoot.querySelector('iron-pages');
       let mainMenuPage = this.shadowRoot.querySelector('main-menu-page');

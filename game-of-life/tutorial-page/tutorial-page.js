@@ -1,7 +1,7 @@
 
 (() =>
 {
-  class TutorialPage extends Polymer.Element
+  class TutorialPage extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element)
   {
     static get is()
     {
@@ -17,7 +17,9 @@
 
     connectedCallback()
     {
-      super.connectedCallback()
+      super.connectedCallback();
+
+      this.loadResources(this.resolveUrl('tutorial-page-locales.json'));
     }
 
     tick()
