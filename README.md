@@ -31,10 +31,10 @@ npm run-script dist
 
 ## 🖼 Previev
 
-<img alt="Main Menu" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot-main-menu.png?raw=true">
-<img alt="Sandbox" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot-sandbox.png?raw=true">
-<img alt="Tutorial" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot-tutorial.png?raw=true">
-<img alt="Settings" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot-settings.png?raw=true">
+<img alt="Main Menu" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot_main_menu.png?raw=true">
+<img alt="Sandbox" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot_sandbox.png?raw=true">
+<img alt="Tutorial" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot_tutorial.png?raw=true">
+<img alt="Settings" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot_settings.png?raw=true">
 
 
 ## 💾 Download
