@@ -1,10 +1,15 @@
 (() =>
 {
+  const path = require('path');
   const rough = require('roughjs'); // from https://roughjs.com/
   const ndarray = require('ndarray'); // from https://github.com/scijs/ndarray
   const zeros = require('zeros'); //from https://github.com/scijs/zeros
 
-  const calculateNextCellStates = require('./game-of-life/shared/game-field/calculateNextCellStates/calculateNextCellStates');
+  // relative to main.js
+  const IMPORT_PATH = './game-of-life/shared/game-field/';
+
+  const calculateNextCellStates = require(IMPORT_PATH + 'calculateNextCellStates/calculateNextCellStates');
+  const readJsonFile = require(IMPORT_PATH + 'readJsonFile/readJsonFile');
 
   const CELL_SIZE = 50;
 
@@ -18,11 +23,12 @@
     static get properties()
     {
       return {
-        columns: { type: Number, value: 20 },
-        rows: { type: Number, value: 20 },
+        columns: { type: Number, value: 5 },
+        rows: { type: Number, value: 5 },
         editable: {  type: Boolean, value: false},
         cellStates: { type: Object },
         cellStatesData: { type: Array }, // 0: dead, 1: alive
+        jsonFilePath: { type: String }, // relative to index.html
         cellColor: { type: String, value: '#0000ff' }, // in RGB - Hexadecimal Code
         roughness: { type: Number, value: 1.0 }, // Roughness of Cell (roughjs)
         bornRules: { type: Array, value : [ 0, 0, 0, 1, 0, 0, 0, 0, 0 ] }, // 0: no change, 1: breed me
@@ -33,30 +39,17 @@
     static get observers()
     {
       return [
-        "render(cellColor, roughness)"
+        "render(cellColor, roughness)",
+        "loadJson(jsonFilePath)",
+        "setup(cellStatesData)"
       ];
-    }
-
-    constructor()
-    {
-      super();
     }
 
     connectedCallback()
     {
       super.connectedCallback();
 
-      if(this.cellStatesData)
-      {
-        // create 2d - array with array data
-        this.cellStates = ndarray(new Int8Array(this.cellStatesData), [this.rows, this.columns]).transpose(1, 0);
-      }
-      else
-      {
-        this.cellStates = zeros([this.columns, this.rows]); // create 2d - array filled with zeros
-      }
-
-      this.render();
+      this.setup();
 
       this.addEventListener('click', (e) =>
       {
@@ -92,6 +85,33 @@
             this.render();
           }
         }
+      });
+    }
+
+    setup()
+    {
+      if(this.cellStatesData)
+      {
+        // create 2d - array with array data
+        this.cellStates = ndarray(new Int8Array(this.cellStatesData), [this.rows, this.columns]).transpose(1, 0);
+      }
+      else
+      {
+        this.cellStates = zeros([this.columns, this.rows]); // create 2d - array filled with zeros
+      }
+
+      this.render();
+    }
+
+    loadJson()
+    {
+      readJsonFile(path.join(this.rootPath, this.jsonFilePath), (json) =>
+      {
+        const obj = JSON.parse(json);
+
+        this.columns = obj.columns;
+        this.rows = obj.rows;
+        this.cellStatesData = obj.data;
       });
     }
 

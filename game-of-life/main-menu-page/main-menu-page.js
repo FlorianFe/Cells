@@ -28,35 +28,6 @@
       buttonSettings.addEventListener('click', () => this.dispatchEvent(new CustomEvent('settings-selected', {})));
     }
 
-    getPentadecathlonData() // http://www.conwaylife.com/wiki/Pentadecathlon
-    {
-      return [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
-    }
-
-    getClockData() // http://www.conwaylife.com/wiki/Clock
-    {
-      return [
-        0, 0, 0, 0, 0, 0,
-        0, 0, 1, 0, 0, 0,
-        0, 0, 0, 1, 1, 0,
-        0, 1, 1, 0, 0, 0,
-        0, 0, 0, 1, 0, 0,
-        0, 0, 0, 0, 0, 0
-      ]
-    }
-
     tick()
     {
       this.shadowRoot.querySelector('game-field').calculateNextGeneration();

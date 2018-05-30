@@ -8,6 +8,7 @@
 <link rel="import" href="main-menu-page/main-menu-page.html">
 <link rel="import" href="sandbox-mode-page/sandbox-mode-page.html">
 <link rel="import" href="configuration-page/configuration-page.html">
+<link rel="import" href="tutorial-page/tutorial-page.html">
 
 <!-- Defines element markup -->
 <dom-module id="game-of-life">
@@ -20,9 +21,20 @@
       :host
       {
         display: block;
+        overflow: auto;
         width: 100%;
+        height: 100vh;
         padding: 0;
         margin: 0;
+      }
+
+      .scrollable
+      {
+        /* exclude window frame from scrolling */
+        overflow: auto;
+
+        /* 30 height + 5*2 padding + 1 border */
+        max-height: calc(100vh - 41px);
       }
 
       </style>
@@ -31,12 +43,14 @@
 
     <rough-window-frame roughness="[[roughness]]"></rough-window-frame>
 
-    <iron-pages selected="[[selectedPage]]">
-      <main-menu-page roughness="[[roughness]]" cell-color="[[cellColor]]"></main-menu-page>
-      <sandbox-mode-page roughness="[[roughness]]" cell-color="[[cellColor]]"></sandbox-mode-page>
-      <configuration-page roughness="{{roughness}}" cell-color="{{cellColor}}"></configuration-page>
-      <level-selection-page></level-selection-page>
-    </iron-pages>
+    <div class="scrollable">
+      <iron-pages selected="[[selectedPage]]">
+        <main-menu-page roughness="[[roughness]]" cell-color="[[cellColor]]"></main-menu-page>
+        <sandbox-mode-page roughness="[[roughness]]" cell-color="[[cellColor]]"></sandbox-mode-page>
+        <tutorial-page roughness="[[roughness]]" cell-color="[[cellColor]]"></tutorial-page>
+        <configuration-page roughness="{{roughness}}" cell-color="{{cellColor}}"></configuration-page>
+      </iron-pages>
+    </div>
 
   </template>
 

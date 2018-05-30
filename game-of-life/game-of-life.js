@@ -1,5 +1,10 @@
 (() =>
 {
+  const MENU_PAGE = 0;
+  const SANDBOX_MODE_PAGE = 1;
+  const TUTORIAL_PAGE = 2;
+  const SETTINGS_PAGE = 3;
+
   const SECOND = 1000; // milliseconds
 
   class GameOfLife extends Polymer.Element
@@ -17,16 +22,6 @@
       }
     }
 
-    constructor()
-    {
-      super();
-    }
-
-    ready()
-    {
-      super.ready();
-    }
-
     connectedCallback()
     {
       super.connectedCallback();
@@ -37,11 +32,11 @@
 
       setInterval(() => ironPages.selectedItem.tick(), SECOND); // centralized interval
 
-      mainMenuPage.addEventListener('sandbox-mode-selected', () => { this.selectedPage = 1; });
-      mainMenuPage.addEventListener('tutorial-selected', () => { this.selectedPage = 0; });
-      mainMenuPage.addEventListener('settings-selected', () => { this.selectedPage = 2; });
+      mainMenuPage.addEventListener('sandbox-mode-selected', () => { this.selectedPage = SANDBOX_MODE_PAGE; });
+      mainMenuPage.addEventListener('tutorial-selected', () => { this.selectedPage = TUTORIAL_PAGE; });
+      mainMenuPage.addEventListener('settings-selected', () => { this.selectedPage = SETTINGS_PAGE; });
 
-      windowFrame.addEventListener('back-to-menu', () => { this.selectedPage = 0; })
+      windowFrame.addEventListener('back-to-menu', () => { this.selectedPage = MENU_PAGE; })
     }
   }
 

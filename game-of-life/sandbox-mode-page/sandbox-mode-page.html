@@ -3,9 +3,11 @@
 
 <!-- Imports Dependencies -->
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
 
 <link rel="import" href="../shared/game-field/game-field.html">
 <link rel="import" href="../shared/rough-filled-polygon-icon/rough-filled-polygon-icon.html">
+
 
 <link rel="import" href="rule-bottom-drawer/rule-bottom-drawer.html">
 
@@ -80,6 +82,10 @@
     </div>
 
     <rule-bottom-drawer born-rules="{{bornRules}}" die-rules="{{dieRules}}" roughness="[[roughness]]"></rule-bottom-drawer>
+
+    <!-- persistence -->
+    <app-localstorage-document key="bornRules" data="{{bornRules}}"></app-localstorage-document>
+    <app-localstorage-document key="dieRules" data="{{dieRules}}"></app-localstorage-document>
 
   </template>
 

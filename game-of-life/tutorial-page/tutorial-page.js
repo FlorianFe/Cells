@@ -1,22 +1,30 @@
 
-class TutorialPage extends Polymer.Element
+(() =>
 {
-  static get is()
+  class TutorialPage extends Polymer.Element
   {
-    return 'tutorial-page';
-  }
+    static get is()
+    {
+      return 'tutorial-page';
+    }
 
-  static get properties()
-  {
-    return {
+    static get properties()
+    {
+      return {
 
+      }
+    }
+
+    connectedCallback()
+    {
+      super.connectedCallback()
+    }
+
+    tick()
+    {
+      console.log("tick");
     }
   }
 
-  connectedCallback()
-  {
-    super.connectedCallback()
-  }
-}
-
-customElements.define(TutorialPage.is, TutorialPage);
+  customElements.define(TutorialPage.is, TutorialPage);
+})();

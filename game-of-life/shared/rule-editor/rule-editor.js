@@ -56,20 +56,40 @@
 
           for(let i=0; i < AMOUNT_OF_CELL_NEIGHBOUR_STATES; i++)
           {
-            const centerPointX = CELL_SIZE * i + 50;
-            const centerPointY = 100;
-
-            const diffX = centerPointX - localX;
-            const diffY = centerPointY - localY;
-
-            const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
-            const circleRadius = CIRCLE_DIAMETER / 2;
-
-            if(distance <= circleRadius)
             {
-              this.set(["bornRules", i], (this.bornRules[i]) ? 0 : 1);
+              const centerPointX = CELL_SIZE * i + 50;
+              const centerPointY = 100;
 
-              this.render();
+              const diffX = centerPointX - localX;
+              const diffY = centerPointY - localY;
+
+              const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
+              const circleRadius = CIRCLE_DIAMETER / 2;
+
+              if(distance <= circleRadius)
+              {
+                this.set(["bornRules", i], (this.bornRules[i]) ? 0 : 1);
+
+                this.render();
+              }
+            }
+
+            {
+              const centerPointX = CELL_SIZE * i + 50;
+              const centerPointY = 150;
+
+              const diffX = centerPointX - localX;
+              const diffY = centerPointY - localY;
+
+              const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
+              const circleRadius = CIRCLE_DIAMETER / 2;
+
+              if(distance <= circleRadius)
+              {
+                this.set(["dieRules", i], (this.dieRules[i]) ? 0 : 1);
+
+                this.render();
+              }
             }
           }
         }

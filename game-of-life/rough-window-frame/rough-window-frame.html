@@ -14,6 +14,10 @@
       :host
       {
         display: block;
+
+        /* make the window draggable on frame */
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
       }
 
       .fixed
@@ -28,9 +32,6 @@
 
         background-color: #ffffff;
         border-bottom: 1px ridge #f8f8f8;
-
-        -webkit-user-select: none;
-        -webkit-app-region: drag;
       }
 
       .non-fixed
@@ -40,6 +41,7 @@
         height: 30px;
         margin: 0;
         padding: 5px;
+        border-bottom: 1px ridge;
       }
 
       .container

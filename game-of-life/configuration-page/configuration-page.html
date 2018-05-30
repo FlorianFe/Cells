@@ -5,6 +5,7 @@
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-slider/paper-slider.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
 
 <link rel="import" href="../shared/game-field/game-field.html">
 <link rel="import" href="color-sliders/color-sliders.html">
@@ -53,18 +54,20 @@
         width: 50px;
       }
 
+      .padded
+      {
+        padding: 10px;
+      }
+
       </style>
     </custom-style>
 
-    <br><br>
 
-    <div class="item">
-      <game-field id="example-game-field" cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 1, 1, 1, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0]' columns="5" rows="5"></game-field>
+    <div class="item padded">
+      <game-field id="example-game-field" cell-color="[[cellColor]]" roughness="[[roughness]]" json-file-path="game-of-life/configuration-page/blinker.json" ></game-field>
     </div>
 
-    <br>
-
-    <div class="item">
+    <div class="item padded">
       <br>
       <paper-card>
         <color-sliders color="{{cellColor}}" roughness="[[roughness]]"></color-sliders>
@@ -83,18 +86,8 @@
       </paper-card>
     </div>
 
-    <br><br>
-
-    <!-- <rule-editor roughness="[[roughness]]"></rule-editor> -->
-
-    <!--
-
-    <br><br>
-
-    <rough-binary-vector-editor cell-color="#00ff00" vector="[[bornRules]]"></rough-binary-vector-editor>
-    <rough-binary-vector-editor cell-color="#ff0000" vector="[[dieRules]]"></rough-binary-vector-editor>
-    
-    -->
+    <!-- persistence -->
+    <app-localstorage-document key="roughness" data="{{roughness}}"></app-localstorage-document>
 
   </template>
 

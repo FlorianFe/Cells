@@ -3,6 +3,8 @@
 <link rel="import" href="../../../bower_components/paper-slider/paper-slider.html">
 
 <!-- Imports Dependencies -->
+<link rel="import" href="../../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
+
 <link rel="import" href="../../shared/game-field/game-field.html">
 
 <!-- Defines element markup -->
@@ -92,6 +94,11 @@
         <game-field class="slider-display-game-field" cell-color="[[rgbToHex(0, 0, 255)]]" roughness="[[roughness]]" cell-states-data='[1]' columns="1" rows="1"></game-field>
       </div>
     </div>
+
+    <!-- persistence -->
+    <app-localstorage-document key="cellColorR" data="{{r}}"></app-localstorage-document>
+    <app-localstorage-document key="cellColorG" data="{{g}}"></app-localstorage-document>
+    <app-localstorage-document key="cellColorB" data="{{b}}"></app-localstorage-document>
 
   </template>
 

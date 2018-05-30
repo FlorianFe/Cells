@@ -4,6 +4,7 @@
 <!-- Imports Dependencies -->
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 
+
 <link rel="import" href="../shared/game-field/game-field.html">
 
 <!-- Defines element markup -->
@@ -26,23 +27,40 @@
         width: 200px;
       }
 
+      .gamefield-container
+      {
+        margin: auto;
+        padding: 15px;
+      }
+
       paper-button
       {
         width: 250px;
+        font-family: 'Gloria Hallelujah', cursive;
+      }
+
+      .buttons-container
+      {
+        padding: 15px;
       }
 
       </style>
     </custom-style>
 
+    <div class="gamefield-container">
+      <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" json-file-path="game-of-life/main-menu-page/clock.json"></game-field>
+    </div>
+
+    <div class="buttons-container">
+      <paper-button id="button-sandbox-mode" raised>Sandbox Mode</paper-button><br><br>
+      <paper-button id="button-tutorial" raised>Tutorial</paper-button><br><br>
+      <paper-button id="button-settings" raised>Settings</paper-button>
+    </div>
+
     <br><br>
 
-    <game-field cell-color="[[cellColor]]" roughness="[[roughness]]" cell-states-data='[[getClockData()]]' columns="6" rows="6"></game-field>
-
-    <br><br>
-
-    <paper-button id="button-sandbox-mode" raised>Sandbox Mode</paper-button><br><br>
-    <paper-button id="button-tutorial" raised>Tutorial</paper-button><br><br>
-    <paper-button id="button-settings" raised>Settings</paper-button><br><br>
+    <img width="40" src="game-of-life/main-menu-page/language-selection/svg/de.svg">
+    <img width="40" src="game-of-life/main-menu-page/language-selection/svg/gb.svg">
   </template>
 
   <!-- Loads JavaScript -->
