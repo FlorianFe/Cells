@@ -38,8 +38,23 @@ npm run-script dist
 
 
 ## 💾 Download
-
-Coming soon...
+<table align="center">
+  <tr>
+    <th>Platform</th>
+    <th>Version</th>
+    <th>Download</td>
+  </tr>
+  <tr>
+    <td>Mac</td>
+    <td>1.0.0</td>
+    <td><a href="https://github.com/FlorianFe/Cells/releases/download/v1.0.0/Cells.dmg">Download</a></td>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td>1.0.0</td>
+    <td><a href="https://github.com/FlorianFe/Cells/releases/download/v1.0.0/Cells.exe">Download</a></td>
+  </tr>
+</table>
 
 
 ## 📖 License
