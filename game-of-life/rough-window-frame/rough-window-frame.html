@@ -17,7 +17,6 @@
 
         /* make the window draggable on frame */
         -webkit-user-select: none;
-        -webkit-app-region: drag;
       }
 
       .fixed
@@ -44,6 +43,12 @@
         border-bottom: 1px ridge;
       }
 
+      .drag-region
+      {
+        flex-grow: 1;
+        -webkit-app-region: drag;
+      }
+
       .container
       {
         display: flex;
@@ -52,7 +57,7 @@
 
       .item
       {
-        flex: 1;
+        /* no flex */
       }
 
       .item-left
@@ -88,6 +93,7 @@
           ></rough-line-icon>
 
         </div>
+        <div class="item drag-region"></div>
         <div class="item item-right">
 
           <rough-line-icon
