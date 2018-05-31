@@ -7,9 +7,6 @@
   const TUTORIAL_PAGE = 2;
   const SETTINGS_PAGE = 3;
 
-  const SECOND = 1000; // milliseconds
-
-
   class GameOfLife extends Polymer.Element
   {
     static get is() { return 'game-of-life'; }
@@ -33,7 +30,8 @@
       let mainMenuPage = this.shadowRoot.querySelector('main-menu-page');
       let windowFrame = this.shadowRoot.querySelector('rough-window-frame');
 
-      setInterval(() => ironPages.selectedItem.tick(), SECOND); // centralized interval
+      // centralized interval
+      setInterval(() => ironPages.selectedItem.tick(), CONFIGURATION.interval);
 
       mainMenuPage.addEventListener('sandbox-mode-selected', () => { this.selectedPage = SANDBOX_MODE_PAGE; });
       mainMenuPage.addEventListener('tutorial-selected', () => { this.selectedPage = TUTORIAL_PAGE; });
