@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Icon" src="https://github.com/FlorianFe/Cells/blob/master/doc/assets/logo.png?raw=true">
+  <img alt="Icon" src="https://github.com/FlorianFe/Cells/blob/master/build/icon.png?raw=true">
   <h1 align="center">Cells</h1>
   <p align="center">A Conway's Game of Life implementation<br><br>
     <a href="http://forthebadge.com"><img alt="forthebadge" src="http://forthebadge.com/images/badges/built-with-love.svg"></a>
@@ -31,9 +31,10 @@ npm run-script dist
 
 ## 🖼 Previev
 
-<img alt="Screenshot 1" src="https://github.com/FlorianFe/Cells/blob/master/doc/assets/screenshot-1.png?raw=true">
-<img alt="Screenshot 2" src="https://github.com/FlorianFe/Cells/blob/master/doc/assets/screenshot-2.png?raw=true">
-<img alt="Screenshot 3" src="https://github.com/FlorianFe/Cells/blob/master/doc/assets/screenshot-3.png?raw=true">
+<img alt="Main Menu" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot_main_menu.png?raw=true">
+<img alt="Sandbox" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot_sandbox.png?raw=true">
+<img alt="Tutorial" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot_tutorial.png?raw=true">
+<img alt="Settings" src="https://github.com/FlorianFe/Cells/blob/master/doc/screenshot_settings.png?raw=true">
 
 
 ## 💾 Download
