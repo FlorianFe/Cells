@@ -3,5 +3,4 @@ bower_components
 bin/*
 dist
 img/*
-main-process/calculateOrigami/minecraftOrthogami/*
-build/minecraftOrthogami/build/Release/*
+build/products
