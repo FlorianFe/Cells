@@ -54,6 +54,11 @@ npm run-script dist
     <td>1.0.0</td>
     <td><a href="https://github.com/FlorianFe/Cells/releases/download/v1.0.0/Cells.exe">Download</a></td>
   </tr>
+  <tr>
+    <td>Linux (.deb)</td>
+    <td>1.0.0</td>
+    <td><a href="https://github.com/FlorianFe/Cells/releases/download/v1.0.0/Cells_amd64.deb">Download</a></td>
+  </tr>
 </table>
 
 
