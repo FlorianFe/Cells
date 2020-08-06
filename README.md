@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Icon" src="https://github.com/FlorianFe/Cells/blob/master/build/icon.png?raw=true">
+  <img alt="Icon" src="https://user-images.githubusercontent.com/19766850/89583167-20e80200-d83a-11ea-9255-70ffcc303d8e.png">
   <h1 align="center">Cells</h1>
   <p align="center">A Conway's Game of Life implementation<br><br>
     <a href="http://forthebadge.com"><img alt="forthebadge" src="http://forthebadge.com/images/badges/built-with-love.svg"></a>
