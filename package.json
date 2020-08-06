@@ -27,7 +27,7 @@
   "author": "Florian Fechner",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^2.0.1",
+    "electron": "^9.1.2",
     "electron-builder": "^20.8.1"
   },
   "dependencies": {
